@@ -1,1 +1,25 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Jumping Ball</title> <style> body { margin: 0; overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #282c34; } canvas { background: white; } </style> </head> <body> <canvas id="gameCanvas"></canvas> <script> const canvas = document.getElementById("gameCanvas"); const ctx = canvas.getContext("2d"); canvas.width = window.innerWidth; canvas.height = window.innerHeight; let ball = { x: canvas.width / 2, y: canvas.height / 2, radius: 20, dy: 0, gravity: 0.5, bounce: -10 }; function update() { ctx.clearRect(0, 0, canvas.width, canvas.height); ball.dy += ball.gravity; ball.y += ball.dy; if (ball.y + ball.radius > canvas.height) { ball.y = canvas.height - ball.radius; ball.dy = ball.bounce; } ctx.beginPath(); ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2); ctx.fillStyle = "red"; ctx.fill(); ctx.closePath(); requestAnimationFrame(update); } window.addEventListener("click", () => { ball.dy = ball.bounce; }); update(); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning to Program</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Learning to Program</h1>
+    <img src="pic.jpg" alt="Learning to program">
+</body>
+</html>
